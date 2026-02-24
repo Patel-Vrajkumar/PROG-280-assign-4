@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="PROG280Assign4.App/PROG280Assign4.App.csproj" />
+  <Project Path="PROG280Assign4.Lib/PROG280Assign4.Lib.csproj" />
+  <Project Path="PROG280Assign4.Tests/PROG280Assign4.Tests.csproj" />
+</Solution>
