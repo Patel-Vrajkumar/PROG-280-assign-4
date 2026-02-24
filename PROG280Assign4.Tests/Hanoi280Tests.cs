@@ -7,8 +7,8 @@ public class Hanoi280Tests
     // Helper: verify that the destination stack contains disks 1..n in order (1 on top)
     private static void AssertDestinationCorrect(Hanoi280 hanoi, int n)
     {
-        Assert.Equal(0, hanoi.Source.Count);
-        Assert.Equal(0, hanoi.Spare.Count);
+        Assert.Empty(hanoi.Source);
+        Assert.Empty(hanoi.Spare);
         Assert.Equal(n, hanoi.Destination.Count);
 
         for (int expected = 1; expected <= n; expected++)
