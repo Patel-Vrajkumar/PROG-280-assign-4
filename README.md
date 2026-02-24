@@ -27,9 +27,9 @@
      - Answer the following questions:
        - Why do we shuffle the items back and forth between these two stacks instead of just saying tempStack = inputStack and then performing our operations?
          Note: If you don’t understand why this won’t work, try coding it.
-         - Answer here: 
+         - Answer here: In C#, `Stack<T>` is a **reference type**. Writing `tempStack = inputStack` does not copy the stack — it creates a second variable that points to the **same object** in memory. Any operations on `tempStack` (like `Pop`) would modify the original `inputStack` as well, destroying the input stack rather than preserving it. By explicitly moving items one at a time between two distinct `Stack<T>` objects we ensure the original stack is fully restored after printing.
        - After identifying what the problem is in the previous question, research another way we can overcome this problem.
-         - Answer here: 
+         - Answer here: We can create a **deep copy** of the stack by using the `Stack<T>(IEnumerable<T>)` constructor. Because iterating a `Stack<T>` yields elements top-to-bottom, the copy will be reversed. We can reverse it again with a second constructor: `var copy = new Stack<int>(new Stack<int>(inputStack));`. The inner constructor reverses the order and the outer one reverses it back, producing an independent copy with the same top-to-bottom order and no shared references with the original.
          
          
 ![image](https://user-images.githubusercontent.com/6656242/215614065-7b51d513-6c93-46d7-bcc1-e2de23c776b8.png)
